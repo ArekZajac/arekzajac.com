@@ -1,8 +1,11 @@
 html{
-    background-color: black;
-    color: white;
+    background-color: rgb(252, 250, 245);
+    color: rgb(1, 19, 15);
     display: flex;
     justify-content: center;
+    background-image: url("assets/images/noise.png");
+    background-size: 250px;
+    background-repeat: repeat;
 }
 
 body {
@@ -20,14 +23,28 @@ a {
     text-decoration: inherit;
 }
 
-h1 {
+#header {
+    width: 100%;
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    font-family: "Patheos-Regular";
-    font-size: 3em;
+}
+
+#title {
+    width: 100vw;
+    max-width: 1920px;
+}
+
+#subtitle {
+    font-family: "HelveticaNeue-BoldItalic";
+    text-align: right;
+    font-size: clamp(16px, 3.5vw, 64px);
+    position: absolute;
+    bottom: .5em;
+    right: 1em;
+    opacity: .9;
 }
 
 #links {
@@ -35,27 +52,34 @@ h1 {
     position: relative;
     flex-direction: column;
     align-items: center;
-    margin: 3em 0 3em 0;
+    margin: 5em 0 5em 0;
+    opacity: .9;
 }
 
 .link {
-    font-family: "Futura";
-    font-size: 1.5em;
-    border-top: 10px;
-    padding: 5px;
-}
-
-.link:hover {
-    background-color: white;
-    color: black;
+    font-family: "HelveticaNeue-Italic";
+    font-size: clamp(16px, 24px, 32px);
+    padding-top: .5em;
+    text-decoration-line: underline 1px;
 }
 
 @font-face {
-    font-family: "Patheos-Regular";
-    src: url(assets/fonts/Patheos-Regular.otf);
+    font-family: "HelveticaNeue-BoldItalic";
+    src: url(assets/fonts/HelveticaNeue-BoldItalic.ttf);
 }
 
 @font-face {
-    font-family: "Futura";
-    src: url(assets/fonts/Futura.ttf);
+    font-family: "HelveticaNeue-Italic";
+    src: url(assets/fonts/HelveticaNeue-Italic.ttf);
+}
+
+@media (prefers-color-scheme: dark) {
+    html {
+        background-color: rgb(1, 19, 15);
+        color: rgb(252, 250, 245);
+    }
+
+    #title {
+        content: url("assets/images/title_white.png");
+    }
 }
