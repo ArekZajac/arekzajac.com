@@ -1,0 +1,65 @@
+@font-face {
+  font-family: "Departure Mono";
+  src: url("/assets/fonts/DepartureMono-Regular.woff2") format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("/assets/fonts/InterVariable.woff2") format("woff2");
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+:root {
+  --font-mono: "Departure Mono", ui-monospace, monospace;
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-size: 16.5px; /*  Should be multiple of 11px */
+
+  --px:          calc(var(--font-size) / 11);  /*  1.5px  one font pixel */
+  --line:        calc(var(--px) * 18);         /* 27  px  one row */
+  --gap-row:     calc(var(--px) * 2);          /*  3  px  within a group */
+  --gap-group:   calc(var(--px) * 8);          /* 12  px  between groups */
+  --gap-section: calc(var(--px) * 16);         /* 24  px  between sections */
+  --page:        calc(var(--px) * 32);         /* 48  px  page padding */
+
+  --bg: #ffffff;
+  --faint: #ededed; /* code blocks, needs to sit just off --bg */
+  --tint: #aeaeae;
+  --heavy: #000000;
+  --accent: #ddff00;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #000000;
+    --faint: #1c1c1c;
+    --heavy: #ffffff;
+    --accent: #d40309;
+  }
+}
+
+html {
+  background-color: var(--bg);
+  color: var(--heavy);
+  font-family: var(--font-mono);
+  font-size: var(--font-size);
+  line-height: var(--line);
+  text-transform: uppercase;
+}
+
+body {
+  margin: 0;
+}
+
+main {
+  box-sizing: border-box;
+  max-width: 640px;
+  margin: 0 auto;
+  padding: var(--page) 2ch;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
